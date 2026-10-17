@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 90" fill="none">
+  <title>MAA</title>
+  <defs>
+    <linearGradient id="az-wordmark-optical" x1="24" y1="90" x2="516" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ddd0bc"/>
+      <stop offset=".2" stop-color="#f4eee2"/>
+      <stop offset=".39" stop-color="#fffaf1"/>
+      <stop offset=".415" stop-color="#d2b999"/>
+      <stop offset=".455" stop-color="#eee2cd"/>
+      <stop offset=".67" stop-color="#faf6ed"/>
+      <stop offset=".83" stop-color="#d5c2a8"/>
+      <stop offset="1" stop-color="#f6efe4"/>
+    </linearGradient>
+  </defs>
+  <g stroke="url(#az-wordmark-optical)" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M163 77V12L192 63 221 12V77"/>
+    <path d="M245 77 272 11 299 77M256 52H287"/>
+    <path d="M323 77 350 11 377 77M334 52H365"/>
+  </g>
+</svg>

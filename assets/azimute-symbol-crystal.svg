@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" fill="none">
+  <title>Azimute — símbolo cristal</title>
+  <defs>
+    <linearGradient id="az-symbol-edge" x1="12" y1="128" x2="106" y2="16" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ad8d70"/>
+      <stop offset=".24" stop-color="#d4c2a9"/>
+      <stop offset=".37" stop-color="#f8f2e7"/>
+      <stop offset=".405" stop-color="#fffbf4"/>
+      <stop offset=".435" stop-color="#c6ad8f"/>
+      <stop offset=".69" stop-color="#b69575"/>
+      <stop offset=".82" stop-color="#eee6d7"/>
+      <stop offset="1" stop-color="#c4a786"/>
+    </linearGradient>
+    <linearGradient id="az-symbol-bearing" x1="44" y1="91" x2="73" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#a98869"/>
+      <stop offset=".43" stop-color="#c8b090"/>
+      <stop offset=".48" stop-color="#f7f0e4"/>
+      <stop offset=".51" stop-color="#e0ceaf"/>
+      <stop offset="1" stop-color="#faf6ec"/>
+    </linearGradient>
+  </defs>
+  <path d="M15 115 60 17 105 115" stroke="url(#az-symbol-edge)" stroke-width="2"/>
+  <path d="M44 78 73 56 68 91 61 76Z" fill="url(#az-symbol-bearing)"/>
+  <path d="M23 116H97M60 8V17M8 116H15M105 116H112" stroke="url(#az-symbol-edge)" stroke-width="1"/>
+  <path d="M35 124a50 50 0 0 0 50-87" stroke="url(#az-symbol-edge)" stroke-width=".7" opacity=".65"/>
+</svg>

@@ -1,0 +1,138 @@
+/* Optical finish for the existing Azimute mark. Load after azimute.css. */
+:root {
+  --az-crystal-white: #f6f0e5;
+  --az-crystal-bronze: #ccb494;
+  --az-crystal-ink: #272925;
+}
+
+/* The pale strokes are darkened only when the fixed header meets mineral paper. */
+.header.is-solid .brand-symbol[src$="azimute-symbol-crystal.svg"] {
+  filter: brightness(.42) saturate(.72);
+}
+.header.is-solid .brand-lockup > img[src$="azimute-wordmark-crystal.svg"] {
+  filter: brightness(.18) saturate(.6);
+}
+
+.hero h1,
+.hero__reframe p,
+.project h2,
+.architecture-copy h2,
+.residences h2,
+.outdoor h2,
+.spaces h2,
+.footer__invitation {
+  font-family: var(--serif, 'Instrument Serif', Georgia, serif);
+}
+
+/* A static mineral highlight belongs to dark chapters, never to small body copy. */
+.hero h1 > em,
+.hero__reframe p,
+.architecture-copy h2 em,
+.outdoor h2 em,
+.footer__invitation em {
+  color: var(--az-crystal-white);
+  text-shadow: 0 1px 1px rgb(16 20 19 / .16);
+}
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .hero h1 > em,
+  .hero__reframe p,
+  .architecture-copy h2 em,
+  .outdoor h2 em,
+  .footer__invitation em {
+    background-image: linear-gradient(122deg, #f8f3e9 8%, #e7dcc8 36%, #fffaf1 42%, #dfc9aa 48%, #f5ecdd 72%, #e3cfb2 100%);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* Editorial paper keeps solid ink and its original bronze emphasis. */
+.project h2,
+.residences h2,
+.spaces h2 {
+  color: var(--az-crystal-ink);
+  text-shadow: none;
+}
+.project h2 em,
+.residences h2 em,
+.spaces h2 em {
+  color: #87654c;
+  -webkit-text-fill-color: currentColor;
+  background: none;
+  text-shadow: none;
+}
+
+.entrance__identity > .eyebrow {
+  color: #e0d0b7;
+}
+.entrance__caption {
+  color: #d5c6b0;
+}
+.entrance__symbol .brand-stroke,
+.entrance__symbol .brand-orbit {
+  stroke: #e1ccb0;
+}
+.entrance__symbol .brand-bearing {
+  fill: #ead9bd;
+}
+
+/* One restrained reflected pass is masked to the existing lettering. */
+.entrance__name {
+  position: relative;
+}
+@supports ((-webkit-mask-image: url("assets/azimute-wordmark-crystal.svg")) or (mask-image: url("assets/azimute-wordmark-crystal.svg"))) {
+  .entrance__name::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    background-image: linear-gradient(112deg, transparent 38%, rgb(255 250 240 / .06) 45%, rgb(255 253 247 / .76) 49%, rgb(234 213 181 / .3) 52%, transparent 60%);
+    background-size: 220% 100%;
+    background-position: 125% 50%;
+    -webkit-mask-image: url("assets/azimute-wordmark-crystal.svg");
+    mask-image: url("assets/azimute-wordmark-crystal.svg");
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    mask-mode: alpha;
+  }
+  .intro-playing .entrance__name::after {
+    animation: azimute-brand-reflection 4.8s cubic-bezier(.2,.55,.35,1) -.7s 1 both;
+  }
+}
+@keyframes azimute-brand-reflection {
+  0% { background-position: 125% 50%; opacity: 0; }
+  15% { opacity: .65; }
+  78% { opacity: .65; }
+  100% { background-position: -105% 50%; opacity: 0; }
+}
+.motion-paused .entrance__name::after,
+.tab-inactive .entrance__name::after {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .entrance__name::after {
+    animation: none !important;
+    opacity: 0;
+  }
+}
+@media (forced-colors: active) {
+  .hero h1 > em,
+  .hero__reframe p,
+  .architecture-copy h2 em,
+  .outdoor h2 em,
+  .footer__invitation em,
+  .project h2 em,
+  .residences h2 em,
+  .spaces h2 em {
+    background: none;
+    color: CanvasText;
+    -webkit-text-fill-color: CanvasText;
+    text-shadow: none;
+  }
+  .entrance__name::after { display: none; }
+}
